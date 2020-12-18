@@ -41,7 +41,7 @@ def count_inversions(num_list):
     return inversions
 
 
-file = open("D:\\Algorithms-Specialization\\files\\integer_array.txt")
+file = open("/files/merge_sort_integers.txt")
 lines = file.readlines()
 file.close()
 
