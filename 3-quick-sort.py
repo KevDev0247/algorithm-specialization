@@ -1,13 +1,27 @@
-def partition(array, choice, left, right):
-    global count, i
+def generate_median(array, left_index, right_index):
+    middle_index = 0 if len(array) == 2 else (len(array) - 1) // 2
+    left = array[left_index]
+    right = array[right_index]
+    middle = array[middle_index]
 
+    candidates = sorted([(left, left_index), (middle, middle_index), (right, right_index)])
+
+    return candidates[1][1]
+
+
+def choose_pivot(choice, left, right):
     if choice == 1:
-        pivot = array[left]
-        i = left
-
+        return left
     elif choice == 2:
-        pivot = array[right]
-        i = right
+        return right
+    else:
+        return generate_median(num_array, left, right)
+
+
+def partition(array, choice, left, right):
+    global count
+    i = choose_pivot(choice, left, right)
+    pivot = array[i]
 
     array[left], array[i] = array[i], array[left]
 
@@ -43,8 +57,10 @@ for n in range(0, len(lines)):
     lines[n] = lines[n].strip()
     num_array.append(int(lines[n]))
 
-choice = int(input("input your choice of pivot (1: Leftmost, 2: Rightmost): "))
+
 count = 0
+choice = int(input("input your choice of pivot (1: Leftmost, 2: Rightmost, 3: Median): "))
+
 count_quick_sort(num_array, choice, 0, len(num_array) - 1)
 
 print(num_array)
