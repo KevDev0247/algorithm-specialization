@@ -1,9 +1,12 @@
 def partition(array, left, right):
     pivot = array[left]
-    i = left + 1
+    i = left
+    array[left], array[i] = array[i], array[left]
 
+    i = left + 1
     for j in range(i, right + 1):
         if array[j] < pivot:
+
             array[i], array[j] = array[j], array[i]
             i += 1
 
