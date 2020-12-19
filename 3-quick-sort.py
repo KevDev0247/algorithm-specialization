@@ -1,5 +1,5 @@
 def generate_median(array, left_index, right_index):
-    middle_index = 0 if len(array) == 2 else (len(array) - 1) // 2
+    middle_index = 0 if right_index - left_index == 1 else (right_index - left_index) // 2 + left_index
     left = array[left_index]
     right = array[right_index]
     middle = array[middle_index]
@@ -9,18 +9,18 @@ def generate_median(array, left_index, right_index):
     return candidates[1][1]
 
 
-def choose_pivot(choice, left, right):
+def choose_pivot(array, choice, left, right):
     if choice == 1:
         return left
     elif choice == 2:
         return right
     else:
-        return generate_median(num_array, left, right)
+        return generate_median(array, left, right)
 
 
 def partition(array, choice, left, right):
     global count
-    i = choose_pivot(choice, left, right)
+    i = choose_pivot(array, choice, left, right)
     pivot = array[i]
 
     array[left], array[i] = array[i], array[left]
