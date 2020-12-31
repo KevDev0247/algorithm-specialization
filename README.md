@@ -4,6 +4,10 @@
 ## Topics
 - Introduction (Grade school multiplication vs Karatsuba multiplication)
 - Asymptotic analysis (Big Oh, Big Omega, and Big Theta)
-- Divide and Conquer paradigm (Merge sort algorithm)
+- Divide and Conquer paradigm
+- Merge sort algorithm
 - The master theorem
-- Randomized algorithms (Quick sort algorithm)
+- Randomized algorithm design
+- Quick sort algorithm
+- Graph concepts (edges, vertices. cuts, applications)
+- Contraction algorithm (Karger's algorithm)
